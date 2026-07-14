@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SENATI: formación profesional tecnológica para transformar el Perú y el mundo.">
+  <meta name="theme-color" content="#021636">
+  <title>SENATI | Formación profesional tecnológica</title>
+  <link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="page page--home" data-page="home">
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <div class="utility-bar" aria-label="Accesos rápidos">
+    <div class="container utility-bar__inner">
+      <nav class="utility-nav" aria-label="Públicos y servicios">
+        <a href="#postulantes">Postulantes</a>
+        <a href="#empresas">Empresas</a>
+        <a href="#colegios">Colegios y educadores</a>
+        <a href="#alumnos">Alumnos</a>
+        <a href="#egresados">Egresados</a>
+        <a href="#bolsa-trabajo">Bolsa de trabajo</a>
+        <a href="#tech-senati">Tech SENATI</a>
+        <a href="#centro-idiomas">Centro de idiomas</a>
+        <a href="#cursos">Cursos</a>
+        <a href="#trabaja-senati">Trabaja en SENATI</a>
+      </nav>
+      <a class="utility-bar__phone" href="tel:+51000000000" aria-label="Central telefónica de demostración">(01) 000 0000</a>
+    </div>
+  </div>
+
+  <header class="site-header" id="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="SENATI, ir al inicio">
+        <img src="assets/logo/senati-logo-white.svg" alt="SENATI" width="142" height="38">
+      </a>
+
+      <nav class="primary-nav" aria-label="Navegación principal">
+        <button class="primary-nav__link primary-nav__link--careers" type="button" aria-expanded="false" aria-controls="careers-megamenu" data-megamenu-trigger>
+          Carreras <span aria-hidden="true">⌄</span>
+        </button>
+        <a class="primary-nav__link" href="#admision">Admisión</a>
+        <a class="primary-nav__link" href="#nosotros">Nosotros</a>
+        <a class="primary-nav__link" href="#sedes">Sedes</a>
+        <a class="primary-nav__link" href="#empresas">Empresas</a>
+        <a class="primary-nav__link" href="#noticias">Noticias</a>
+        <a class="primary-nav__link" href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="site-header__actions">
+        <button class="icon-button search-toggle" type="button" aria-expanded="false" aria-controls="site-search" aria-label="Abrir buscador" data-search-toggle>
+          <span class="icon icon--search" aria-hidden="true"></span>
+        </button>
+        <a class="button button--primary button--compact header-enroll" href="#formulario-informacion">Inscríbete aquí <span aria-hidden="true">→</span></a>
+        <button class="icon-button menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Abrir menú" data-menu-toggle>
+          <span class="menu-toggle__lines" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+
+    <form class="site-search" id="site-search" role="search" hidden>
+      <div class="container site-search__inner">
+        <label class="sr-only" for="site-search-input">Buscar en SENATI</label>
+        <input id="site-search-input" name="q" type="search" placeholder="¿Qué quieres buscar?" autocomplete="off">
+        <button class="button button--primary" type="submit">Buscar</button>
+        <button class="icon-button" type="button" aria-label="Cerrar buscador" data-search-close>×</button>
+      </div>
+    </form>
+
+    <section class="mega-menu" id="careers-megamenu" aria-label="Carreras por familias" hidden data-megamenu>
+      <div class="container mega-menu__layout">
+        <div class="mega-menu__families">
+          <section class="mega-menu__family mega-menu__family--technology">
+            <h2><span class="category-mark" aria-hidden="true"></span>Tecnología</h2>
+            <ul>
+              <li><a href="carreras.html?area=Tecnologia">Desarrollo de Software</a></li>
+              <li><a href="carreras.html?area=Tecnologia">Ciberseguridad</a></li>
+              <li><a href="carreras.html?area=Tecnologia">Inteligencia Artificial</a></li>
+              <li><a href="carreras.html?area=Tecnologia">Redes y Comunicaciones</a></li>
+              <li><a href="carreras.html?area=Tecnologia">Soporte y Servicios TI</a></li>
+            </ul>
+          </section>
+          <section class="mega-menu__family mega-menu__family--industry">
+            <h2><span class="category-mark" aria-hidden="true"></span>Industria</h2>
+            <ul>
+              <li><a href="detalle-carrera.html?id=mecatronica-automotriz">Mecatrónica Automotriz</a></li>
+              <li><a href="carreras.html?area=Industria">Automatización Industrial</a></li>
+              <li><a href="carreras.html?area=Industria">Mantenimiento Industrial</a></li>
+              <li><a href="carreras.html?area=Industria">Producción Industrial</a></li>
+              <li><a href="carreras.html?area=Industria">Logística</a></li>
+            </ul>
+          </section>
+          <section class="mega-menu__family mega-menu__family--energy">
+            <h2><span class="category-mark" aria-hidden="true"></span>Energía</h2>
+            <ul>
+              <li><a href="carreras.html?area=Energia">Electricidad Industrial</a></li>
+              <li><a href="carreras.html?area=Energia">Electrónica Industrial</a></li>
+              <li><a href="carreras.html?area=Energia">Energías Renovables</a></li>
+              <li><a href="carreras.html?area=Energia">Instalaciones Eléctricas</a></li>
+              <li><a href="carreras.html?area=Energia">Climatización</a></li>
+            </ul>
+          </section>
+          <section class="mega-menu__family mega-menu__family--construction">
+            <h2><span class="category-mark" aria-hidden="true"></span>Construcción</h2>
+            <ul>
+              <li><a href="carreras.html?area=Construccion">Construcción Civil</a></li>
+              <li><a href="carreras.html?area=Construccion">Arquitectura de Plataformas</a></li>
+              <li><a href="carreras.html?area=Construccion">Topografía</a></li>
+              <li><a href="carreras.html?area=Construccion">Seguridad en Construcción</a></li>
+              <li><a href="carreras.html?area=Construccion">Costos y Presupuestos</a></li>
+            </ul>
+          </section>
+          <section class="mega-menu__family mega-menu__family--design">
+            <h2><span class="category-mark" aria-hidden="true"></span>Diseño y otros</h2>
+            <ul>
+              <li><a href="carreras.html?area=Diseno">Diseño Gráfico</a></li>
+              <li><a href="carreras.html?area=Diseno">Diseño de Interiores</a></li>
+              <li><a href="carreras.html?area=Gestion">Administración de Empresas</a></li>
+              <li><a href="carreras.html?area=Gestion">Contabilidad</a></li>
+              <li><a href="carreras.html?area=Gestion">Marketing</a></li>
+            </ul>
+          </section>
+        </div>
+        <aside class="mega-menu__aside" aria-label="Ayuda para elegir una carrera">
+          <p class="eyebrow">¿No sabes qué carrera elegir?</p>
+          <h2>Encuentra el camino que conecta con tu talento.</h2>
+          <a class="button button--primary" href="carreras.html">Descubre tu carrera ideal</a>
+          <a class="button button--secondary" href="#sedes">Ver sedes</a>
+          <a class="text-link text-link--whatsapp" href="#whatsapp" data-whatsapp-link>Hablar por WhatsApp <span aria-hidden="true">→</span></a>
+        </aside>
+      </div>
+    </section>
+
+    <aside class="mobile-drawer" id="mobile-drawer" aria-label="Menú móvil" aria-hidden="true" data-mobile-drawer>
+      <div class="mobile-drawer__head">
+        <a class="brand" href="index.html" aria-label="SENATI, ir al inicio">
+          <img src="assets/logo/senati-logo-white.svg" alt="SENATI" width="128" height="34">
+        </a>
+        <button class="icon-button" type="button" aria-label="Cerrar menú" data-menu-close>×</button>
+      </div>
+      <nav class="mobile-nav" aria-label="Navegación móvil">
+        <div class="mobile-nav__accordion" data-accordion>
+          <button type="button" aria-expanded="false" aria-controls="mobile-careers" data-accordion-trigger>Carreras <span aria-hidden="true">+</span></button>
+          <div id="mobile-careers" class="mobile-nav__panel" hidden>
+            <a href="carreras.html?area=Tecnologia">Tecnología</a>
+            <a href="carreras.html?area=Industria">Industria</a>
+            <a href="carreras.html?area=Energia">Energía</a>
+            <a href="carreras.html?area=Construccion">Construcción</a>
+            <a href="carreras.html?area=Diseno">Diseño y otros</a>
+            <a href="carreras.html">Ver todas las carreras</a>
+          </div>
+        </div>
+        <a href="#admision">Admisión</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#sedes">Sedes</a>
+        <a href="#empresas">Empresas</a>
+        <a href="#noticias">Noticias</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a class="button button--primary button--full" href="#formulario-informacion">Inscríbete aquí</a>
+    </aside>
+    <button class="drawer-backdrop" type="button" aria-label="Cerrar menú" hidden data-drawer-backdrop></button>
+  </header>
+
+  <main id="contenido-principal">
+    <section class="hero hero--carousel" aria-labelledby="hero-title" data-hero-carousel>
+      <div class="hero__stage" data-hero-slides aria-live="off">
+        <figure class="hero__slide is-active"><img src="assets/images/hero-industria-alimentaria.jpg" alt="Estudiante de Industria Alimentaria en un laboratorio tecnológico de SENATI" width="1536" height="864" fetchpriority="high"></figure>
+      </div>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__layout">
+        <div class="hero__content" aria-live="polite">
+          <p class="eyebrow eyebrow--light" data-hero-eyebrow>Industria Alimentaria</p>
+          <h1 id="hero-title" data-hero-title>Alimenta el presente, transforma el mañana</h1>
+          <p class="hero__lead" data-hero-description>Conviértete en un profesional capaz de innovar, controlar y mejorar los procesos de la industria alimentaria.</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="detalle-carrera.html?id=industria-alimentaria" data-hero-cta>Conoce Industria Alimentaria <span aria-hidden="true">→</span></a>
+            <a class="button button--ghost" href="#agenda-visita"><span class="icon icon--calendar" aria-hidden="true"></span>Agenda una visita</a>
+          </div>
+          <div class="hero-carousel__navigation" aria-label="Controles del carrusel principal">
+            <button class="hero-carousel__arrow" type="button" aria-label="Slide anterior" data-hero-previous>‹</button>
+            <div class="hero-carousel__dots" role="tablist" aria-label="Seleccionar carrera destacada" data-hero-dots></div>
+            <button class="hero-carousel__arrow" type="button" aria-label="Slide siguiente" data-hero-next>›</button>
+          </div>
+        </div>
+
+        <aside class="lead-card" id="formulario-informacion" aria-labelledby="lead-form-title">
+          <div class="lead-card__header">
+            <p class="eyebrow">Da el siguiente paso</p>
+            <h2 id="lead-form-title">Empieza tu futuro hoy</h2>
+            <p>Déjanos tus datos y un asesor se contactará contigo.</p>
+          </div>
+          <form class="form form--lead" id="lead-form" novalidate data-lead-form>
+            <fieldset class="lead-paths">
+              <legend>Elige cómo quieres estudiar</legend>
+              <label class="lead-path">
+                <input type="radio" name="program" value="Carrera de 3 años" required checked aria-describedby="lead-program-error">
+                <span class="lead-path__radio" aria-hidden="true"></span>
+                <span><strong>Carreras de 3 años</strong><small>Formación técnica presencial</small></span>
+              </label>
+              <label class="lead-path">
+                <input type="radio" name="program" value="Carreras para gente que trabaja" required aria-describedby="lead-program-error">
+                <span class="lead-path__radio" aria-hidden="true"></span>
+                <span><strong>Carreras para gente que trabaja</strong><small>Estudia y trabaja al mismo tiempo</small></span>
+              </label>
+              <label class="lead-path">
+                <input type="radio" name="program" value="Carrera virtual" required aria-describedby="lead-program-error">
+                <span class="lead-path__radio" aria-hidden="true"></span>
+                <span><strong>100% Virtual</strong><small>Estudia desde donde estés</small></span>
+              </label>
+              <span class="field-error" id="lead-program-error" aria-live="polite"></span>
+            </fieldset>
+            <div class="form-field">
+              <label for="lead-name">Nombres y apellidos</label>
+              <input id="lead-name" name="name" type="text" autocomplete="name" required aria-describedby="lead-name-error">
+              <span class="field-error" id="lead-name-error" aria-live="polite"></span>
+            </div>
+            <div class="form-field">
+              <label for="lead-phone">Celular / WhatsApp</label>
+              <input id="lead-phone" name="phone" type="tel" autocomplete="tel" inputmode="numeric" pattern="[0-9]{7,12}" required aria-describedby="lead-phone-error">
+              <span class="field-error" id="lead-phone-error" aria-live="polite"></span>
+            </div>
+            <div class="form-field">
+              <label for="lead-area">Especialidad de interés</label>
+              <select id="lead-area" name="area" required aria-describedby="lead-area-error" data-area-select>
+                <option value="">Selecciona una especialidad</option>
+              </select>
+              <span class="field-error" id="lead-area-error" aria-live="polite"></span>
+            </div>
+            <div class="form-field">
+              <label for="lead-campus">Sede de interés</label>
+              <select id="lead-campus" name="campus" required aria-describedby="lead-campus-error" data-campus-select>
+                <option value="">Selecciona una sede</option>
+              </select>
+              <span class="field-error" id="lead-campus-error" aria-live="polite"></span>
+            </div>
+            <div class="form-field form-field--checkbox">
+              <input id="lead-privacy" name="privacy" type="checkbox" required aria-describedby="lead-privacy-error">
+              <label for="lead-privacy">He leído y acepto la <a href="#politica-privacidad">política de privacidad</a>.</label>
+              <span class="field-error" id="lead-privacy-error" aria-live="polite"></span>
+            </div>
+            <button class="button button--primary button--full" type="submit">Quiero más información <span aria-hidden="true">→</span></button>
+            <p class="form-status" role="status" aria-live="polite" tabindex="-1"></p>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <div class="specialties-block">
+      <div class="container">
+        <section class="section areas-section specialties-block__panel" id="carreras" aria-labelledby="areas-title">
+          <div class="container">
+            <div class="section-heading section-heading--center">
+              <p class="eyebrow">Nuestras especialidades</p>
+              <h2 id="areas-title">Explora nuestras especialidades</h2>
+              <p>Encuentra una especialidad que conecte tus habilidades con las oportunidades de la industria.</p>
+            </div>
+            <div class="horizontal-carousel" data-horizontal-carousel aria-label="Especialidades de estudio">
+              <div class="horizontal-carousel__track areas-grid" id="areas-grid" data-areas-container aria-live="polite"></div>
+            </div>
+            <div class="section-actions"><a class="button button--secondary" href="carreras.html">Ver todas las especialidades <span aria-hidden="true">→</span></a></div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <section class="study-modes" aria-labelledby="modes-title">
+      <div class="container">
+        <div class="section-heading section-heading--center"><h2 id="modes-title">Elige la modalidad que se adapta a <span>ti</span></h2></div>
+        <div class="study-modes__grid" data-study-modes></div>
+      </div>
+    </section>
+
+    <section class="career-finder" aria-labelledby="finder-title">
+      <div class="container career-finder__card">
+        <div class="career-finder__heading"><p class="eyebrow eyebrow--light">Encuentra tu camino</p><h2 id="finder-title">Encuentra la carrera ideal para ti</h2></div>
+        <form class="career-finder__form" data-career-finder>
+          <div><label for="finder-program">Modalidad</label><select id="finder-program" name="programa" data-finder-program><option value="">Selecciona una modalidad</option></select></div>
+          <div><label for="finder-area">Especialidad de interés</label><select id="finder-area" name="area" data-finder-area><option value="">Selecciona una especialidad</option></select></div>
+          <div><label for="finder-modality">Tipo de estudio</label><select id="finder-modality" name="modalidad" data-finder-modality><option value="">Presencial o virtual</option><option value="Presencial">Presencial</option><option value="Virtual">Virtual</option><option value="Semipresencial">Semipresencial</option></select></div>
+          <div><label for="finder-campus">Sede</label><select id="finder-campus" name="sede" data-finder-campus><option value="">Selecciona una sede</option></select></div>
+          <button class="button button--primary" type="submit">Buscar carreras <span aria-hidden="true">→</span></button>
+        </form>
+        <p class="career-finder__help">ⓘ ¿No sabes qué estudiar? <a href="carreras.html">Realiza nuestro test vocacional →</a></p>
+      </div>
+    </section>
+
+    <section class="section campuses" id="sedes" aria-labelledby="campuses-title">
+      <div class="container">
+        <div class="section-heading section-heading--center"><p class="eyebrow">Nuestras sedes</p><h2 id="campuses-title">Estamos cerca de ti</h2><p>Encuentra la sede más cercana y da el siguiente paso.</p></div>
+        <div class="campuses__layout">
+          <aside class="campuses__panel" aria-label="Buscar sede">
+            <label class="sr-only" for="campus-search">Buscar sede</label><input id="campus-search" type="search" placeholder="Busca una sede" data-campus-search>
+            <div class="campuses__tabs"><button type="button" class="is-active" data-campus-filter="">Todas las sedes</button><button type="button" data-campus-filter="Lima">Lima</button><button type="button" data-campus-filter="Arequipa">Arequipa</button></div>
+            <div class="campuses__list" data-campus-list aria-live="polite"></div>
+            <a class="text-link campuses__all" href="carreras.html">Ver todas las sedes <span aria-hidden="true">→</span></a>
+          </aside>
+          <div class="campuses__map-wrap">
+            <div class="campuses__map" role="group" aria-label="Mapa interactivo con sedes SENATI" data-campus-map>
+              <span class="campuses__ocean" aria-hidden="true">OCÉANO<br>PACÍFICO</span>
+              <span class="campuses__country campuses__country--ecuador" aria-hidden="true">Ecuador</span>
+              <span class="campuses__country campuses__country--colombia" aria-hidden="true">Colombia</span>
+              <span class="campuses__country campuses__country--brasil" aria-hidden="true">Brasil</span>
+              <span class="campuses__country campuses__country--bolivia" aria-hidden="true">Bolivia</span>
+              <span class="campuses__country campuses__country--chile" aria-hidden="true">Chile</span>
+              <div class="campuses__map-stage" data-campus-stage>
+                <img class="campuses__peru" src="assets/images/peru-map.svg" alt="Mapa político del Perú con sus departamentos" width="630" height="912">
+              </div>
+            </div>
+            <article class="campus-detail" data-campus-detail aria-live="polite"></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials" id="testimonios" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="section-heading section-heading--center">
+          <p class="eyebrow">Orgullo SENATI</p>
+          <h2 id="testimonials-title">Historias que inspiran</h2>
+          <p>Nuestros egresados transforman la industria con talento, innovación y propósito.</p>
+        </div>
+        <div class="carousel" data-testimonials-carousel>
+          <button class="carousel__button carousel__button--previous" type="button" aria-label="Testimonio anterior" data-carousel-previous>‹</button>
+          <div class="carousel__viewport" tabindex="0">
+            <div class="carousel__track testimonials-grid" id="testimonials-track" data-testimonials-container aria-live="polite"></div>
+          </div>
+          <button class="carousel__button carousel__button--next" type="button" aria-label="Testimonio siguiente" data-carousel-next>›</button>
+          <div class="carousel__dots" role="tablist" aria-label="Seleccionar testimonio" data-carousel-dots></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section partner-companies" id="empresas" aria-labelledby="partners-title">
+      <div class="container">
+        <div class="section-heading section-heading--split">
+          <div>
+            <p class="eyebrow">Alianzas que impulsan</p>
+            <h2 id="partners-title">Empresas con las que tenemos acuerdos</h2>
+          </div>
+          <p>Innovación y tecnología creando centros de excelencia para una formación conectada con el trabajo.</p>
+        </div>
+        <div class="logo-strip" id="company-logos" data-companies-container aria-label="Empresas aliadas"></div>
+        <div class="section-actions"><a class="button button--primary" href="#empresas-aliadas">Ver más empresas <span aria-hidden="true">→</span></a></div>
+      </div>
+    </section>
+
+    <section class="section experience" id="experiencia" aria-labelledby="experience-title">
+      <div class="container experience__card">
+        <figure class="experience__visual">
+          <img src="assets/images/experiencia-taller.jpg" alt="Taller tecnológico y especializado de SENATI" width="660" height="480" loading="lazy">
+        </figure>
+        <div class="experience__content">
+          <p class="eyebrow eyebrow--light">Una formación conectada con la industria</p>
+          <h2 id="experience-title">Vive la experiencia SENATI</h2>
+          <p>Laboratorios de última tecnología, docentes expertos y prácticas en empresas líderes.</p>
+          <a class="button button--primary" href="#agenda-visita">Conoce más <span aria-hidden="true">→</span></a>
+        </div>
+        <ul class="experience__features" aria-label="Beneficios de estudiar en SENATI">
+          <li><span aria-hidden="true">⌬</span>Talleres especializados</li>
+          <li><span aria-hidden="true">◉</span>Equipos de última tecnología</li>
+          <li><span aria-hidden="true">◎</span>Docentes expertos</li>
+          <li><span aria-hidden="true">⚙</span>Formación práctica</li>
+          <li><span aria-hidden="true">↗</span>Bolsa de trabajo</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section visit-cta" id="agenda-visita" aria-labelledby="visit-title">
+      <div class="container visit-cta__card">
+        <div><p class="eyebrow eyebrow--light">El futuro te espera</p><h2 id="visit-title">Tu futuro profesional empieza hoy</h2><p>Encuentra la carrera que conecta con tus habilidades y prepárate para transformar la industria.</p></div>
+        <div class="visit-cta__actions"><a class="button button--light" href="carreras.html">Conoce nuestras carreras <span aria-hidden="true">→</span></a><a class="button button--ghost" href="#formulario-informacion">Quiero más información</a></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="sr-only" aria-label="Destinos informativos provisionales del prototipo">
+    <span id="postulantes"></span><span id="colegios"></span><span id="alumnos"></span><span id="egresados"></span>
+    <span id="bolsa-trabajo"></span><span id="tech-senati"></span><span id="centro-idiomas"></span><span id="cursos"></span>
+    <span id="trabaja-senati"></span><span id="noticias"></span><span id="empresas-aliadas"></span><span id="proceso-admision"></span>
+    <span id="requisitos"></span><span id="financiamiento"></span><span id="becas"></span><span id="postula"></span>
+    <span id="quienes-somos"></span><span id="historia"></span><span id="mision-vision"></span><span id="valores"></span>
+    <span id="todas-sedes"></span><span id="sedes-lima"></span><span id="sedes-nacional"></span><span id="escuela-superior"></span>
+    <span id="privacidad"></span><span id="terminos"></span><span id="reclamaciones"></span><span id="mapa"></span>
+    <span id="facebook"></span><span id="instagram"></span><span id="youtube"></span><span id="linkedin"></span><span id="tiktok"></span>
+  </div>
+
+  <footer class="site-footer" id="contacto">
+    <div class="container site-footer__top">
+      <section class="site-footer__brand" aria-labelledby="footer-about-title">
+        <img src="assets/logo/senati-logo-white.svg" alt="SENATI" width="156" height="42">
+        <h2 class="sr-only" id="footer-about-title">Acerca de SENATI</h2>
+        <p>Desde 1961 formamos profesionales técnicos que transforman el Perú y el mundo con educación de calidad y tecnología.</p>
+        <nav class="social-links" aria-label="Redes sociales">
+          <a href="#facebook" aria-label="Facebook">f</a><a href="#instagram" aria-label="Instagram">◎</a><a href="#youtube" aria-label="YouTube">▶</a><a href="#linkedin" aria-label="LinkedIn">in</a><a href="#tiktok" aria-label="TikTok">♪</a>
+        </nav>
+        <p class="quality-badge"><span aria-hidden="true">∞</span> Certificados por ISO 9001:2015<br>Calidad educativa</p>
+      </section>
+      <nav class="site-footer__nav" aria-label="Enlaces del pie de página">
+        <section class="footer-column" data-footer-accordion>
+          <h2><button type="button" aria-expanded="true" aria-controls="footer-careers" data-footer-trigger>Carreras <span aria-hidden="true">⌄</span></button></h2>
+          <ul id="footer-careers"><li><a href="carreras.html?programa=3">Carreras de 3 años</a></li><li><a href="carreras.html?programa=4">Carreras de 4 años</a></li><li><a href="carreras.html?modalidad=Virtual">Carreras virtuales</a></li><li><a href="#cursos">Cursos cortos</a></li><li><a href="carreras.html">Carreras por áreas</a></li></ul>
+        </section>
+        <section class="footer-column" id="admision" data-footer-accordion>
+          <h2><button type="button" aria-expanded="true" aria-controls="footer-admission" data-footer-trigger>Admisión <span aria-hidden="true">⌄</span></button></h2>
+          <ul id="footer-admission"><li><a href="#proceso-admision">Proceso de admisión</a></li><li><a href="#requisitos">Requisitos</a></li><li><a href="#financiamiento">Financiamiento</a></li><li><a href="#becas">Becas y beneficios</a></li><li><a href="#postula">Postula en línea</a></li></ul>
+        </section>
+        <section class="footer-column" id="nosotros" data-footer-accordion>
+          <h2><button type="button" aria-expanded="true" aria-controls="footer-about" data-footer-trigger>Nosotros <span aria-hidden="true">⌄</span></button></h2>
+          <ul id="footer-about"><li><a href="#quienes-somos">¿Quiénes somos?</a></li><li><a href="#historia">Historia</a></li><li><a href="#mision-vision">Misión y visión</a></li><li><a href="#valores">Valores</a></li><li><a href="#trabaja-senati">Trabaja en SENATI</a></li></ul>
+        </section>
+        <section class="footer-column" id="footer-sedes" data-footer-accordion>
+          <h2><button type="button" aria-expanded="true" aria-controls="footer-campuses" data-footer-trigger>Sedes <span aria-hidden="true">⌄</span></button></h2>
+          <ul id="footer-campuses"><li><a href="#todas-sedes">Todas las sedes</a></li><li><a href="#sedes-lima">Sedes en Lima</a></li><li><a href="#sedes-nacional">Sedes a nivel nacional</a></li><li><a href="#escuela-superior">Escuela Superior</a></li></ul>
+        </section>
+        <section class="footer-column" data-footer-accordion>
+          <h2><button type="button" aria-expanded="true" aria-controls="footer-contact" data-footer-trigger>Contacto <span aria-hidden="true">⌄</span></button></h2>
+          <ul id="footer-contact"><li><a href="tel:+51000000000">(01) 000 0000</a></li><li><a href="mailto:informes@senati.edu.pe">informes@senati.edu.pe</a></li><li><address>Av. Alfredo Mendiola 3520, Independencia, Lima</address></li></ul>
+        </section>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <div class="container site-footer__bottom-inner">
+        <nav aria-label="Información legal"><a id="politica-privacidad" href="#privacidad">Política de privacidad</a><a href="#terminos">Términos y condiciones</a><a href="#reclamaciones">Libro de reclamaciones</a><a href="#mapa">Mapa del sitio</a></nav>
+        <p>© 2026 SENATI. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" id="whatsapp" href="https://wa.me/00000000000" target="_blank" rel="noopener noreferrer" data-whatsapp-link aria-label="Chatear por WhatsApp">
+    <span class="whatsapp-float__icon" aria-hidden="true">◉</span><span class="whatsapp-float__text">¿Tienes dudas? Chatea por WhatsApp</span>
+  </a>
+  <button class="back-to-top" type="button" aria-label="Volver arriba" hidden data-back-to-top>↑</button>
+
+  <template id="area-card-template">
+    <article class="area-card"><div class="area-card__art"><img alt="" width="420" height="300" loading="lazy"></div><div class="area-card__content"><p class="area-card__count"></p><h3></h3><p></p><a class="text-link" href="carreras.html">Ver carreras <span aria-hidden="true">→</span></a></div></article>
+  </template>
+  <template id="testimonial-card-template">
+    <article class="testimonial-card"><span class="testimonial-card__quote" aria-hidden="true">“</span><blockquote></blockquote><div class="testimonial-card__person"><img alt="" width="96" height="96" loading="lazy"><div><h3></h3><p class="testimonial-card__career"></p><p class="testimonial-card__year"></p></div></div><div class="testimonial-card__company"><span>Trabaja en</span><img alt="" width="120" height="40" loading="lazy"></div></article>
+  </template>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
