@@ -12,6 +12,101 @@
     { id: 'gestion-negocios', nombre: 'Gestión y negocios', color: '#0677a8', icono: 'business', imagen: image('areas-strip.jpg'), descripcion: 'Gestiona organizaciones con una mirada práctica y digital.' }
   ];
 
+  const especialidades = [
+    {
+      id: 'tecnologias-informacion',
+      nombre: 'Tecnologías de la Información',
+      color: '#0b7cff',
+      etiqueta: 'Innovación digital',
+      area: 'Tecnología',
+      imagen: image('especialidad-ti-3d.jpg'),
+      descripcion: 'Diseña software, redes y soluciones digitales que transforman la industria.'
+    },
+    {
+      id: 'electrotecnia',
+      nombre: 'Electrotecnia',
+      color: '#7957ff',
+      etiqueta: 'Energía y control',
+      area: 'Energía',
+      imagen: image('especialidad-electrotecnia-3d.jpg'),
+      descripcion: 'Domina sistemas eléctricos, electrónicos y de automatización industrial.'
+    },
+    {
+      id: 'industria-alimentaria',
+      nombre: 'Industria Alimentaria',
+      color: '#20c778',
+      etiqueta: 'Procesos y calidad',
+      area: 'Industria',
+      imagen: image('especialidad-industria-alimentaria-3d.jpg'),
+      href: 'detalle-carrera.html?id=industria-alimentaria',
+      descripcion: 'Innova en producción, inocuidad y control de calidad de alimentos.'
+    },
+    {
+      id: 'administracion-empresas',
+      nombre: 'Administración de Empresas',
+      color: '#e9a93b',
+      etiqueta: 'Gestión estratégica',
+      area: 'Gestión y negocios',
+      imagen: image('especialidad-administracion-3d.jpg'),
+      href: 'detalle-carrera.html?id=administracion-empresas',
+      descripcion: 'Lidera equipos, operaciones y proyectos con visión estratégica y digital.'
+    },
+    {
+      id: 'metalmecanica',
+      nombre: 'Metalmecánica',
+      color: '#7659ff',
+      etiqueta: 'Manufactura avanzada',
+      area: 'Industria',
+      imagen: image('especialidad-metalmecanica-3d.jpg'),
+      descripcion: 'Fabrica y optimiza componentes con precisión, soldadura y control CNC.'
+    },
+    {
+      id: 'mecanica-automotriz',
+      nombre: 'Mecánica Automotriz',
+      color: '#ff445f',
+      etiqueta: 'Diagnóstico y movilidad',
+      area: 'Industria',
+      imagen: image('especialidad-mecanica-automotriz-3d.jpg'),
+      descripcion: 'Diagnostica y mantiene vehículos con tecnología automotriz de última generación.'
+    },
+    {
+      id: 'hoteleria-turismo-restauracion',
+      nombre: 'Hotelería, Turismo y Restauración',
+      color: '#e5a63f',
+      etiqueta: 'Servicio y experiencias',
+      area: 'Gestión y negocios',
+      imagen: image('especialidad-hoteleria-turismo-restauracion-3d.jpg'),
+      descripcion: 'Crea experiencias memorables en hotelería, viajes y servicios gastronómicos.'
+    },
+    {
+      id: 'textil',
+      nombre: 'Textil',
+      color: '#d74ee5',
+      etiqueta: 'Tecnología de materiales',
+      area: 'Industria',
+      imagen: image('especialidad-textil-3d.jpg'),
+      descripcion: 'Desarrolla fibras, tejidos y procesos textiles con innovación tecnológica.'
+    },
+    {
+      id: 'agroindustria',
+      nombre: 'Agroindustria',
+      color: '#39c967',
+      etiqueta: 'Producción sostenible',
+      area: 'Industria',
+      imagen: image('especialidad-agroindustria-3d.jpg'),
+      descripcion: 'Tecnifica la producción agrícola con procesos eficientes y sostenibles.'
+    },
+    {
+      id: 'confeccion-prendas',
+      nombre: 'Confección de Prendas de Vestir',
+      color: '#f34ab5',
+      etiqueta: 'Diseño y producción',
+      area: 'Diseño y comunicación',
+      imagen: image('especialidad-confeccion-3d.jpg'),
+      descripcion: 'Convierte diseños en prendas mediante patronaje y producción especializada.'
+    }
+  ];
+
   const sedes = [
     'Lima', 'Callao', 'Arequipa', 'Trujillo', 'Chiclayo', 'Piura',
     'Cusco', 'Ica', 'Huancayo', 'Cajamarca', 'Pucallpa', 'Tacna'
@@ -178,6 +273,7 @@
 
   window.SenatiData = Object.freeze({
     areas,
+    especialidades,
     sedes,
     heroSlides,
     modalidades,

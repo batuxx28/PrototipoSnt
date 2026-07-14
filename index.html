@@ -53,7 +53,7 @@
         <button class="icon-button search-toggle" type="button" aria-expanded="false" aria-controls="site-search" aria-label="Abrir buscador" data-search-toggle>
           <span class="icon icon--search" aria-hidden="true"></span>
         </button>
-        <a class="button button--primary button--compact header-enroll" href="#formulario-informacion">Inscríbete aquí <span aria-hidden="true">→</span></a>
+        <a class="button button--primary button--compact header-enroll" href="#formulario-informacion" aria-haspopup="dialog" aria-controls="lead-drawer" data-lead-drawer-open>Inscríbete aquí <span aria-hidden="true">→</span></a>
         <button class="icon-button menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Abrir menú" data-menu-toggle>
           <span class="menu-toggle__lines" aria-hidden="true"></span>
         </button>
@@ -133,7 +133,7 @@
       </div>
     </section>
 
-    <aside class="mobile-drawer" id="mobile-drawer" aria-label="Menú móvil" aria-hidden="true" data-mobile-drawer>
+    <aside class="mobile-drawer" id="mobile-drawer" aria-label="Menú móvil" aria-hidden="true" hidden data-mobile-drawer>
       <div class="mobile-drawer__head">
         <a class="brand" href="index.html" aria-label="SENATI, ir al inicio">
           <img src="assets/logo/senati-logo-white.svg" alt="SENATI" width="128" height="34">
@@ -159,7 +159,7 @@
         <a href="#noticias">Noticias</a>
         <a href="#contacto">Contacto</a>
       </nav>
-      <a class="button button--primary button--full" href="#formulario-informacion">Inscríbete aquí</a>
+      <a class="button button--primary button--full" href="#formulario-informacion" aria-haspopup="dialog" aria-controls="lead-drawer" data-lead-drawer-open>Inscríbete aquí</a>
     </aside>
     <button class="drawer-backdrop" type="button" aria-label="Cerrar menú" hidden data-drawer-backdrop></button>
   </header>
@@ -177,7 +177,7 @@
           <p class="hero__lead" data-hero-description>Conviértete en un profesional capaz de innovar, controlar y mejorar los procesos de la industria alimentaria.</p>
           <div class="hero__actions">
             <a class="button button--primary" href="detalle-carrera.html?id=industria-alimentaria" data-hero-cta>Conoce Industria Alimentaria <span aria-hidden="true">→</span></a>
-            <a class="button button--ghost" href="#agenda-visita"><span class="icon icon--calendar" aria-hidden="true"></span>Agenda una visita</a>
+            <button class="button button--ghost" type="button" aria-haspopup="dialog" aria-controls="lead-drawer" data-lead-drawer-open><span class="icon icon--info" aria-hidden="true"></span>Solicitar información</button>
           </div>
           <div class="hero-carousel__navigation" aria-label="Controles del carrusel principal">
             <button class="hero-carousel__arrow" type="button" aria-label="Slide anterior" data-hero-previous>‹</button>
@@ -186,7 +186,15 @@
           </div>
         </div>
 
-        <aside class="lead-card" id="formulario-informacion" aria-labelledby="lead-form-title">
+      </div>
+    </section>
+
+    <div class="lead-drawer" id="lead-drawer" role="dialog" aria-modal="true" aria-labelledby="lead-form-title" aria-hidden="true" hidden data-lead-drawer>
+      <div class="lead-drawer__toolbar">
+        <p>Información y admisión</p>
+        <button class="icon-button" type="button" aria-label="Cerrar formulario" data-lead-drawer-close>×</button>
+      </div>
+      <aside class="lead-card" id="formulario-informacion" aria-labelledby="lead-form-title">
           <div class="lead-card__header">
             <p class="eyebrow">Da el siguiente paso</p>
             <h2 id="lead-form-title">Empieza tu futuro hoy</h2>
@@ -244,9 +252,9 @@
             <button class="button button--primary button--full" type="submit">Quiero más información <span aria-hidden="true">→</span></button>
             <p class="form-status" role="status" aria-live="polite" tabindex="-1"></p>
           </form>
-        </aside>
-      </div>
-    </section>
+      </aside>
+    </div>
+    <button class="lead-drawer__backdrop" type="button" aria-label="Cerrar formulario" hidden data-lead-drawer-backdrop></button>
 
     <div class="specialties-block">
       <div class="container">
@@ -257,7 +265,15 @@
               <h2 id="areas-title">Explora nuestras especialidades</h2>
               <p>Encuentra una especialidad que conecte tus habilidades con las oportunidades de la industria.</p>
             </div>
-            <div class="horizontal-carousel" data-horizontal-carousel aria-label="Especialidades de estudio">
+            <div class="specialties-carousel__toolbar">
+              <p><strong data-specialties-count>10</strong> especialidades para explorar</p>
+              <div class="specialties-carousel__controls" aria-label="Controles de especialidades">
+                <button type="button" aria-label="Ver especialidades anteriores" aria-controls="areas-grid" data-specialties-previous>‹</button>
+                <span class="sr-only" aria-live="polite" data-specialties-status></span>
+                <button type="button" aria-label="Ver más especialidades" aria-controls="areas-grid" data-specialties-next>›</button>
+              </div>
+            </div>
+            <div class="horizontal-carousel" data-horizontal-carousel data-specialties-carousel tabindex="0" aria-label="Carrusel de especialidades de estudio">
               <div class="horizontal-carousel__track areas-grid" id="areas-grid" data-areas-container aria-live="polite"></div>
             </div>
             <div class="section-actions"><a class="button button--secondary" href="carreras.html">Ver todas las especialidades <span aria-hidden="true">→</span></a></div>
@@ -371,7 +387,7 @@
     <section class="section visit-cta" id="agenda-visita" aria-labelledby="visit-title">
       <div class="container visit-cta__card">
         <div><p class="eyebrow eyebrow--light">El futuro te espera</p><h2 id="visit-title">Tu futuro profesional empieza hoy</h2><p>Encuentra la carrera que conecta con tus habilidades y prepárate para transformar la industria.</p></div>
-        <div class="visit-cta__actions"><a class="button button--light" href="carreras.html">Conoce nuestras carreras <span aria-hidden="true">→</span></a><a class="button button--ghost" href="#formulario-informacion">Quiero más información</a></div>
+        <div class="visit-cta__actions"><a class="button button--light" href="carreras.html">Conoce nuestras carreras <span aria-hidden="true">→</span></a><a class="button button--ghost" href="#formulario-informacion" aria-haspopup="dialog" aria-controls="lead-drawer" data-lead-drawer-open>Quiero más información</a></div>
       </div>
     </section>
   </main>
@@ -435,7 +451,7 @@
   <button class="back-to-top" type="button" aria-label="Volver arriba" hidden data-back-to-top>↑</button>
 
   <template id="area-card-template">
-    <article class="area-card"><div class="area-card__art"><img alt="" width="420" height="300" loading="lazy"></div><div class="area-card__content"><p class="area-card__count"></p><h3></h3><p></p><a class="text-link" href="carreras.html">Ver carreras <span aria-hidden="true">→</span></a></div></article>
+    <article class="area-card"><div class="area-card__art"><img alt="" width="1200" height="900" loading="lazy" decoding="async"></div><div class="area-card__content"><p class="area-card__count"></p><h3></h3><p></p><a class="text-link" href="carreras.html">Explorar carreras <span aria-hidden="true">→</span></a></div></article>
   </template>
   <template id="testimonial-card-template">
     <article class="testimonial-card"><span class="testimonial-card__quote" aria-hidden="true">“</span><blockquote></blockquote><div class="testimonial-card__person"><img alt="" width="96" height="96" loading="lazy"><div><h3></h3><p class="testimonial-card__career"></p><p class="testimonial-card__year"></p></div></div><div class="testimonial-card__company"><span>Trabaja en</span><img alt="" width="120" height="40" loading="lazy"></div></article>

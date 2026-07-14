@@ -102,6 +102,10 @@
     });
     closeButtons.forEach((button) => button.addEventListener('click', () => { apply(false); toggle.focus(); }));
     if (overlay) overlay.addEventListener('click', () => apply(false));
+    const desktopMedia = window.matchMedia('(min-width: 1024px)');
+    desktopMedia.addEventListener('change', (event) => {
+      if (event.matches && toggle.getAttribute('aria-expanded') === 'true') apply(false);
+    });
     drawer.addEventListener('click', (event) => {
       if (event.target.closest('a[href]') && !event.target.closest('[data-submenu-trigger]')) apply(false);
     });
@@ -120,6 +124,57 @@
         apply(false);
         toggle.focus();
       }
+    });
+  }
+
+  function initLeadDrawer() {
+    const drawer = $('[data-lead-drawer]');
+    const backdrop = $('[data-lead-drawer-backdrop]');
+    const triggers = $$('[data-lead-drawer-open]');
+    if (!drawer || !triggers.length || drawer.dataset.senatiDrawerBound) return;
+    drawer.dataset.senatiDrawerBound = 'true';
+    const closeButtons = $$('[data-lead-drawer-close]', drawer);
+    let lastTrigger = null;
+
+    const focusableElements = () => $$('a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])', drawer)
+      .filter((element) => !element.hidden && element.getAttribute('aria-hidden') !== 'true');
+
+    const apply = (open, trigger = null) => {
+      if (open) lastTrigger = trigger || doc.activeElement;
+      drawer.hidden = !open;
+      drawer.setAttribute('aria-hidden', String(!open));
+      drawer.classList.toggle('is-open', open);
+      if (backdrop) backdrop.hidden = !open;
+      doc.body.classList.toggle('lead-drawer-open', open);
+      if (open) {
+        window.setTimeout(() => {
+          const first = focusableElements()[0];
+          if (first) first.focus();
+        }, 0);
+      } else {
+        const fallback = $('[data-menu-toggle]') || triggers[0];
+        const focusTarget = lastTrigger && lastTrigger.getClientRects().length ? lastTrigger : fallback;
+        if (focusTarget) focusTarget.focus();
+      }
+    };
+
+    triggers.forEach((trigger) => trigger.addEventListener('click', (event) => {
+      event.preventDefault();
+      apply(true, trigger);
+    }));
+    closeButtons.forEach((button) => button.addEventListener('click', () => apply(false)));
+    if (backdrop) backdrop.addEventListener('click', () => apply(false));
+    drawer.addEventListener('keydown', (event) => {
+      if (event.key !== 'Tab') return;
+      const focusable = focusableElements();
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && doc.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && doc.activeElement === last) { event.preventDefault(); first.focus(); }
+    });
+    doc.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !drawer.hidden) apply(false);
     });
   }
 
@@ -459,12 +514,21 @@
     });
     const areaTrack = $('[data-areas-track], [data-areas-container]');
     if (areaTrack && !areaTrack.children.length) {
-      areaTrack.innerHTML = data.areas.map((area) => `
-        <article class="area-card area-card--${escapeHTML(area.id)}" style="--area-color:${escapeHTML(area.color)}">
-          <div class="area-card__art"><img src="${escapeHTML(area.imagen)}" alt="Ilustración tecnológica de ${escapeHTML(area.nombre)}" loading="lazy"></div>
-          <div class="area-card__content"><p class="area-card__count">${data.carreras.filter((career) => career.area === area.nombre).length} carreras</p><h3>${escapeHTML(area.nombre)}</h3><p>${escapeHTML(area.descripcion)}</p>
-          <a class="text-link" href="carreras.html?area=${encodeURIComponent(area.nombre)}">Ver especialidades <span aria-hidden="true">→</span></a></div>
-        </article>`).join('');
+      const specialties = data.especialidades || data.areas;
+      areaTrack.innerHTML = specialties.map((specialty) => {
+        const targetArea = specialty.area || specialty.nombre;
+        const href = specialty.href || `carreras.html?area=${encodeURIComponent(targetArea)}`;
+        const relatedCount = data.carreras.filter((career) => career.area === targetArea).length;
+        const label = specialty.etiqueta || `${relatedCount} carreras`;
+        return `
+          <article class="area-card area-card--${escapeHTML(specialty.id)}" style="--area-color:${escapeHTML(specialty.color)}">
+            <div class="area-card__art"><img src="${escapeHTML(specialty.imagen)}" alt="Render 3D isométrico de ${escapeHTML(specialty.nombre)}" width="1200" height="900" loading="lazy" decoding="async"></div>
+            <div class="area-card__content"><p class="area-card__count">${escapeHTML(label)}</p><h3>${escapeHTML(specialty.nombre)}</h3><p>${escapeHTML(specialty.descripcion)}</p>
+            <a class="text-link" href="${escapeHTML(href)}">Explorar carreras <span aria-hidden="true">→</span></a></div>
+          </article>`;
+      }).join('');
+      const specialtiesCount = $('[data-specialties-count]');
+      if (specialtiesCount) specialtiesCount.textContent = String(specialties.length);
     }
     const testimonialTrack = $('[data-testimonials-track], [data-testimonials-container]');
     if (testimonialTrack && !testimonialTrack.children.length) {
@@ -538,9 +602,59 @@
     update();
   }
 
+  function initSpecialtiesCarousel() {
+    const viewport = $('[data-specialties-carousel]');
+    const track = viewport && $('[data-areas-container]', viewport);
+    if (!viewport || !track || viewport.dataset.senatiCarouselBound) return;
+    viewport.dataset.senatiCarouselBound = 'true';
+    const previous = $('[data-specialties-previous]');
+    const next = $('[data-specialties-next]');
+    const status = $('[data-specialties-status]');
+    const cards = () => Array.from(track.children);
+    let frame = 0;
+
+    const metrics = () => {
+      const items = cards();
+      const gap = parseFloat(window.getComputedStyle(track).columnGap || window.getComputedStyle(track).gap) || 0;
+      const step = items.length > 1 ? items[1].offsetLeft - items[0].offsetLeft : ((items[0] && items[0].offsetWidth) || viewport.clientWidth) + gap;
+      const visible = Math.max(1, Math.floor((viewport.clientWidth + gap + 1) / Math.max(step, 1)));
+      const active = Math.max(0, Math.min(items.length - 1, Math.round(viewport.scrollLeft / Math.max(step, 1))));
+      return { items, step, visible, active };
+    };
+
+    const update = () => {
+      const { items, visible, active } = metrics();
+      const atStart = viewport.scrollLeft <= 2;
+      const atEnd = viewport.scrollLeft >= viewport.scrollWidth - viewport.clientWidth - 2;
+      if (previous) previous.disabled = !items.length || atStart;
+      if (next) next.disabled = !items.length || atEnd;
+      if (status && items.length) status.textContent = `Mostrando especialidades ${active + 1} a ${Math.min(items.length, active + visible)} de ${items.length}.`;
+    };
+
+    const move = (direction) => {
+      const { step, visible } = metrics();
+      const target = Math.max(0, Math.min(viewport.scrollWidth - viewport.clientWidth, viewport.scrollLeft + direction * step * visible));
+      viewport.scrollTo({ left: target, behavior: reducedMotion() ? 'auto' : 'smooth' });
+    };
+
+    if (previous) previous.addEventListener('click', () => move(-1));
+    if (next) next.addEventListener('click', () => move(1));
+    viewport.addEventListener('keydown', (event) => {
+      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+      event.preventDefault();
+      move(event.key === 'ArrowLeft' ? -1 : 1);
+    });
+    viewport.addEventListener('scroll', () => {
+      window.cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(update);
+    }, { passive: true });
+    if ('ResizeObserver' in window) new ResizeObserver(update).observe(viewport);
+    window.requestAnimationFrame(update);
+  }
+
   function initCarousels() {
     const roots = $$('[data-carousel], .carousel');
-    $$('[data-testimonials-track], [data-testimonials-container], [data-areas-track], [data-areas-container]').forEach((track) => {
+    $$('[data-testimonials-track], [data-testimonials-container]').forEach((track) => {
       const root = track.closest('section, [data-carousel], .carousel') || track.parentElement;
       if (root && !roots.includes(root)) roots.push(root);
     });
@@ -594,7 +708,7 @@
   function initSmoothScroll() {
     doc.addEventListener('click', (event) => {
       const link = event.target.closest('a[href^="#"]');
-      if (!link || link.getAttribute('href') === '#') return;
+      if (!link || link.getAttribute('href') === '#' || link.hasAttribute('data-lead-drawer-open')) return;
       const target = $(link.getAttribute('href'));
       if (!target) return;
       event.preventDefault();
@@ -611,9 +725,11 @@
     initCampuses();
     initMegaMenu();
     initMobileDrawer();
+    initLeadDrawer();
     initSearch();
     initAccordions();
     initForms();
+    initSpecialtiesCarousel();
     initCarousels();
     initWhatsApp();
     initBackToTop();

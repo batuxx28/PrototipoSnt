@@ -49,8 +49,8 @@ Los datos mock de especialidades, carreras, sedes, testimonios, empresas y malla
 
 La actualización de Home incorpora además:
 
-- Carrusel de cinco especialidades con autoplay, controles, teclado, pausa y swipe táctil.
-- Formulario corto del Hero con tres rutas de estudio y validación accesible.
+- Carrusel horizontal de diez especialidades: muestra cinco tarjetas por vista en desktop, dos en tablet y una en móvil, con controles, teclado y swipe táctil.
+- Hero institucional sin superposición del formulario. El formulario conserva sus tres rutas de estudio y validación accesible dentro de un drawer activado por “Solicitar información”.
 - Cinco modalidades institucionales vinculadas al buscador de carreras.
 - Buscador que navega a resultados con sus filtros en la URL.
 - Home reordenada por intención: Especialidades, Modalidades, Buscador y Sedes como bloques independientes de ancho completo.
@@ -58,6 +58,8 @@ La actualización de Home incorpora además:
 - Logo oficial blanco de SENATI en el header oscuro.
 
 Los recursos de cada slide se encuentran en `assets/images/hero-*.jpg`; son archivos locales optimizados para la carga inicial y los slides diferidos.
+
+La sección de Especialidades utiliza diez renders 3D isométricos individuales en `assets/images/especialidad-*-3d.jpg`. Las rutas, nombres, acentos y textos se administran desde el arreglo `especialidades` de `js/data.js`.
 
 El número ficticio de WhatsApp se configura en el objeto `whatsapp` de `js/data.js`. Debe reemplazarse únicamente por un número institucional autorizado antes de publicar el sitio.
 
